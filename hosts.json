@@ -16,7 +16,7 @@
     "github.blog"
   ],
   [
-    "140.82.112.17",
+    "140.82.114.18",
     "github.community"
   ],
   [
@@ -96,7 +96,7 @@
     "codeload.github.com"
   ],
   [
-    "159.24.3.173",
+    "37.61.54.158",
     "gist.github.com"
   ],
   [
@@ -104,7 +104,7 @@
     "gist.githubusercontent.com"
   ],
   [
-    "31.13.85.169",
+    "128.121.146.235",
     "github.global.ssl.fastly.net"
   ],
   [
@@ -116,23 +116,23 @@
     "github.githubassets.com"
   ],
   [
-    "16.15.199.212",
+    "16.15.183.173",
     "github-cloud.s3.amazonaws.com"
   ],
   [
-    "16.15.238.14",
+    "16.15.207.150",
     "github-com.s3.amazonaws.com"
   ],
   [
-    "16.15.183.19",
+    "16.15.183.56",
     "github-production-release-asset-2e65be.s3.amazonaws.com"
   ],
   [
-    "16.15.199.117",
+    "16.15.212.107",
     "github-production-repository-file-5c1aeb.s3.amazonaws.com"
   ],
   [
-    "16.15.212.107",
+    "16.15.212.164",
     "github-production-user-asset-6210df.s3.amazonaws.com"
   ],
   [
@@ -140,19 +140,19 @@
     "pipelines.actions.githubusercontent.com"
   ],
   [
-    "140.82.112.22",
+    "140.82.113.22",
     "central.github.com"
   ],
   [
-    "140.82.112.22",
+    "140.82.113.21",
     "collector.github.com"
   ],
   [
-    "140.82.112.25",
+    "140.82.114.26",
     "live.github.com"
   ],
   [
-    "140.82.114.22",
+    "140.82.113.22",
     "education.github.com"
   ],
   [
@@ -164,11 +164,11 @@
     "private-user-images.githubusercontent.com"
   ],
   [
-    "23.55.209.225",
+    "92.122.17.67",
     "store.steampowered.com"
   ],
   [
-    "202.160.128.40",
+    "80.87.199.46",
     "steamcommunity.com"
   ],
   [
@@ -184,15 +184,15 @@
     "steampowered.com"
   ],
   [
-    "146.75.115.52",
+    "199.232.163.52",
     "cdn.steamstatic.com"
   ],
   [
-    "96.16.250.11",
+    "96.16.250.16",
     "steamcdn-a.akamaihd.net"
   ],
   [
-    "23.209.125.174",
+    "23.209.125.18",
     "store.akamai.steamstatic.com"
   ],
   [
@@ -200,7 +200,7 @@
     "cdn.akamai.steamstatic.com"
   ],
   [
-    "23.209.125.188",
+    "23.209.125.20",
     "community.akamai.steamstatic.com"
   ],
   [
@@ -212,7 +212,7 @@
     "steam.tv"
   ],
   [
-    "23.59.42.243",
+    "184.25.219.75",
     "steamgames.com"
   ]
 ]

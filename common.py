@@ -40,8 +40,8 @@ HOSTS_TEMPLATE = """# Host520 Host Start
 {content}
 
 # Update time: {update_time}
-# Update url: https://raw.hellogithub.com/hosts
-# Star me: https://github.com/Host520/Host520
+# Update url: https://raw.githubusercontent.com/haowee/Host520/main/hosts
+# Star me: https://github.com/haowee/Host520
 # Host520 Host End
 """
 

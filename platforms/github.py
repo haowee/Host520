@@ -17,7 +17,6 @@ URLS = [
     'github.community',
     'githubstatus.com',
     # 登录与认证
-    'github.com',
     'login.github.com',
     'github.githubassets.com',
     # 内容与资源
@@ -43,7 +42,6 @@ URLS = [
     # CDN 与加速
     'github.global.ssl.fastly.net',
     'github.map.fastly.net',
-    'github.githubassets.com',
     # AWS S3 存储
     'github-cloud.s3.amazonaws.com',
     'github-com.s3.amazonaws.com',

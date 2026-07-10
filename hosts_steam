@@ -1,19 +1,19 @@
 # Steam520 Host Start
-23.55.209.225                 store.steampowered.com
-202.160.128.40                steamcommunity.com
+92.122.17.67                  store.steampowered.com
+80.87.199.46                  steamcommunity.com
 23.59.52.127                  api.steampowered.com
 23.59.52.127                  help.steampowered.com
 23.59.42.243                  steampowered.com
-146.75.115.52                 cdn.steamstatic.com
-96.16.250.11                  steamcdn-a.akamaihd.net
-23.209.125.174                store.akamai.steamstatic.com
+199.232.163.52                cdn.steamstatic.com
+96.16.250.16                  steamcdn-a.akamaihd.net
+23.209.125.18                 store.akamai.steamstatic.com
 23.209.125.14                 cdn.akamai.steamstatic.com
-23.209.125.188                community.akamai.steamstatic.com
+23.209.125.20                 community.akamai.steamstatic.com
 23.59.42.243                  steam-chat.com
 23.59.42.243                  steam.tv
-23.59.42.243                  steamgames.com
+184.25.219.75                 steamgames.com
 
 
-# Update time: 2026-07-11T01:47:04+08:00
+# Update time: 2026-07-11T02:08:21+08:00
 # Platform: steam
 # Steam520 Host End
