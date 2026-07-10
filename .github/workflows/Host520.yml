@@ -31,12 +31,12 @@ jobs:
         python update_ips.py --platform all
     - name: commit
       id: commit
+      continue-on-error: true
       run: |
         git config --global user.email host520@example.com
         git config --global user.name action_bot
         git add .
         git commit -m "update readme content"
-        continue-on-error: true
     - name: Check on failures
       if: steps.commit.outcome == 'failure'
       run: exit 1
