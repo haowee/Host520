@@ -81,7 +81,7 @@ def is_valid_public_ip(ip: str) -> bool:
             (3232235520, 3232301055),      # 192.168.0.0/16
             (2130706432, 2147483647),      # 127.0.0.0/8
             (0, 16777215),                 # 0.0.0.0/8
-            (2240000000, 4294967295),      # D/E 类（组播/保留）
+            (3758096384, 4294967295),      # 224.0.0.0/3（组播+保留）
         ]
         for start, end in reserved_ranges:
             if start <= ip_int <= end:
@@ -205,35 +205,78 @@ async def process_domain(domain: str, resolver: aiodns.DNSResolver) -> Tuple[str
     return (domain, best_ip)
 
 
-def fetch_ips_for_platform(platform_urls: List[str], verbose: bool = False) -> Tuple[str, List[Tuple[str, str]]]:
+async def _fetch_remote_data(url: str) -> Optional[List[Tuple[str, str]]]:
+    """从远程 URL 获取已解析的 IP 数据"""
+    try:
+        timeout = aiohttp.ClientTimeout(total=15)
+        async with aiohttp.ClientSession(timeout=timeout) as session:
+            async with session.get(url) as resp:
+                if resp.status != 200:
+                    logger.warning(f"远程数据源 {url} 返回状态码 {resp.status}")
+                    return None
+                data = await resp.json()
+                if isinstance(data, list):
+                    return [(item[0], item[1]) for item in data if len(item) >= 2]
+                logger.warning(f"远程数据源 {url} 格式异常: {type(data)}")
+                return None
+    except Exception as e:
+        logger.warning(f"获取远程数据源 {url} 失败: {e}")
+        return None
+
+
+def fetch_ips_for_platform(
+    platform_urls: List[str], verbose: bool = False,
+    remote_data_url: Optional[str] = None
+) -> Tuple[str, List[Tuple[str, str]]]:
     """获取指定平台的所有域名 IP（同步入口，内部异步）"""
     windows_compatibility_check()
 
     if verbose:
-        print(f'Start fetching IPs for platform...')
+        print('Start fetching IPs for platform...')
 
-    async def _fetch_all():
-        resolver = aiodns.DNSResolver(
-            nameservers=[s.split(':')[0] for s in DNS_SERVER_LIST],
-            timeout=REQUEST_TIMEOUT
-        )
-        tasks = [process_domain(domain, resolver) for domain in platform_urls]
-        return await asyncio.gather(*tasks)
+    # 1. 远程数据源（优先使用）
+    remote_map: Dict[str, str] = {}
+    if remote_data_url:
+        remote_data = asyncio.run(_fetch_remote_data(remote_data_url))
+        if remote_data:
+            allowed = set(platform_urls)
+            for ip, domain in remote_data:
+                if domain in allowed and is_valid_public_ip(ip):
+                    remote_map[domain] = ip
+            if verbose:
+                print(f"从远程数据源获取到 {len(remote_map)} 个域名的 IP")
 
-    results = asyncio.run(_fetch_all())
+    # 2. DNS 解析（远程数据源未覆盖的域名）
+    dns_urls = [d for d in platform_urls if d not in remote_map]
 
+    dns_results_map: Dict[str, Optional[str]] = {}
+    if dns_urls:
+        async def _fetch_all():
+            resolver = aiodns.DNSResolver(
+                nameservers=[s.split(':')[0] for s in DNS_SERVER_LIST],
+                timeout=REQUEST_TIMEOUT
+            )
+            tasks = [process_domain(domain, resolver) for domain in dns_urls]
+            return await asyncio.gather(*tasks)
+
+        dns_results = asyncio.run(_fetch_all())
+        for domain, best_ip in dns_results:
+            dns_results_map[domain] = best_ip
+        if verbose and dns_urls:
+            print(f"DNS 解析到 {len(dns_results_map)} 个域名")
+
+    # 3. 合并结果（按 platform_urls 顺序输出）
     content = ""
     content_list = []
 
-    for i, domain in enumerate(platform_urls):
-        domain_result, best_ip = results[i]
-        if best_ip:
-            line = best_ip.ljust(30) + domain
-            # 标记超时 IP
-            if PING_CACHE.get(best_ip) == PING_TIMEOUT * 1000:
+    for domain in platform_urls:
+        ip = remote_map.get(domain) or dns_results_map.get(domain)
+        if ip:
+            line = ip.ljust(30) + domain
+            if PING_CACHE.get(ip) == PING_TIMEOUT * 1000:
                 line += "  # Timeout"
             content += line + "\n"
-            content_list.append((best_ip, domain))
+            content_list.append((ip, domain))
 
     if verbose:
         print('End fetching IPs.')
@@ -251,14 +294,18 @@ def main(verbose=False, platform_name=None):
             print(f"Unknown platform: {platform_name}")
             return None, None
 
-        return fetch_ips_for_platform(platform.URLS, verbose)
+        remote_url = getattr(platform, 'REMOTE_DATA_URL', None)
+        return fetch_ips_for_platform(platform.URLS, verbose, remote_data_url=remote_url)
     else:
         results = {}
         all_content_list = []
 
         for name, platform in get_all_platforms().items():
             print(f"\n=== Fetching {name} ===")
-            content, content_list = fetch_ips_for_platform(platform.URLS, verbose)
+            remote_url = getattr(platform, 'REMOTE_DATA_URL', None)
+            content, content_list = fetch_ips_for_platform(
+                platform.URLS, verbose, remote_data_url=remote_url
+            )
             results[name] = (content, content_list)
             all_content_list.extend(content_list)
 

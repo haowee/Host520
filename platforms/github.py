@@ -7,6 +7,9 @@
 PLATFORM_NAME = "github"
 DESCRIPTION = "GitHub 代码托管平台"
 
+# 远程数据源（从 GitHub520 项目获取已解析的 IP）
+REMOTE_DATA_URL = "https://raw.hellogithub.com/hosts.json"
+
 # GitHub 相关域名
 URLS = [
     # 核心服务
