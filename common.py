@@ -12,12 +12,16 @@ from typing import Any, Optional, List, Dict
 from datetime import datetime, timezone, timedelta
 from retry import retry
 
-# DNS服务器列表（只使用国内DNS，获取更适合国内用户的IP）
+# DNS服务器列表（国内+海外DNS，提高解析成功率）
 DNS_SERVER_LIST = [
     "223.5.5.5",       # 阿里云DNS
     "223.6.6.6",       # 阿里云DNS
     "119.29.29.29",    # 腾讯云DNS
     "119.28.28.28",    # 腾讯云DNS
+    "1.1.1.1",         # Cloudflare DNS
+    "101.226.4.6",     # 360 DNS
+    "180.184.1.1",     # 字节跳动DNS
+    "180.76.76.76",    # 百度DNS
 ]
 
 # 需要丢弃的IP列表（无效或不可用的IP）
