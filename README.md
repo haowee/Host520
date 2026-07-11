@@ -47,36 +47,43 @@ Host520 让你更流畅地访问 Steam、GitHub 等平台，解决访问时图�
 ```bash
 # Host520 Host Start
 # Steam520 Host Start
-23.48.9.171                   store.steampowered.com
-23.54.184.97                  steamcommunity.com
-23.54.184.97                  api.steampowered.com
-23.54.184.97                  help.steampowered.com
-23.223.209.11                 steamcdn-a.akamaihd.net
-23.48.224.14                  store.akamai.steamstatic.com
-23.48.224.13                  cdn.akamai.steamstatic.com
-23.48.224.13                  community.akamai.steamstatic.com
+23.45.137.115                 store.steampowered.com
+104.68.104.163                steamcommunity.com
+104.68.104.163                api.steampowered.com
+104.68.104.163                help.steampowered.com
+104.68.112.116                steampowered.com
+23.212.62.81                  steamcdn-a.akamaihd.net
+23.192.228.141                store.akamai.steamstatic.com
+23.192.228.147                cdn.akamai.steamstatic.com
+23.192.228.151                community.akamai.steamstatic.com
+104.68.112.116                steam-chat.com
+104.68.112.116                steam.tv
+104.68.112.116                steamgames.com
 
 
-# Update time: 2026-07-11T11:26:38+08:00
+# Update time: 2026-07-11T11:37:02+08:00
 # Platform: steam
 # Steam520 Host End
 
 # GitHub520 Host Start
-52.217.174.193                github-cloud.s3.amazonaws.com
-16.182.32.145                 github-com.s3.amazonaws.com
-52.216.213.105                github-production-release-asset-2e65be.s3.amazonaws.com
-16.15.228.44                  github-production-repository-file-5c1aeb.s3.amazonaws.com
-52.216.207.11                 github-production-user-asset-6210df.s3.amazonaws.com
+20.29.134.23                  github.com
+20.29.134.23                  gist.github.com
+16.15.183.173                 github-cloud.s3.amazonaws.com
+16.15.183.173                 github-com.s3.amazonaws.com
+16.15.183.173                 github-production-release-asset-2e65be.s3.amazonaws.com
+16.15.183.173                 github-production-repository-file-5c1aeb.s3.amazonaws.com
+16.15.245.132                 github-production-user-asset-6210df.s3.amazonaws.com
 13.107.42.16                  pipelines.actions.githubusercontent.com
+13.107.253.69                 vscode.dev
 
 
-# Update time: 2026-07-11T11:26:38+08:00
+# Update time: 2026-07-11T11:37:02+08:00
 # Platform: github
 # GitHub520 Host End
 
 
 
-# Update time: 2026-07-11T11:26:38+08:00
+# Update time: 2026-07-11T11:37:02+08:00
 # Update url: https://raw.githubusercontent.com/haowee/Host520/main/hosts
 # Star me: https://github.com/haowee/Host520
 # Host520 Host End

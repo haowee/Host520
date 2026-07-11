@@ -1,12 +1,15 @@
 # GitHub520 Host Start
-52.217.174.193                github-cloud.s3.amazonaws.com
-16.182.32.145                 github-com.s3.amazonaws.com
-52.216.213.105                github-production-release-asset-2e65be.s3.amazonaws.com
-16.15.228.44                  github-production-repository-file-5c1aeb.s3.amazonaws.com
-52.216.207.11                 github-production-user-asset-6210df.s3.amazonaws.com
+20.29.134.23                  github.com
+20.29.134.23                  gist.github.com
+16.15.183.173                 github-cloud.s3.amazonaws.com
+16.15.183.173                 github-com.s3.amazonaws.com
+16.15.183.173                 github-production-release-asset-2e65be.s3.amazonaws.com
+16.15.183.173                 github-production-repository-file-5c1aeb.s3.amazonaws.com
+16.15.245.132                 github-production-user-asset-6210df.s3.amazonaws.com
 13.107.42.16                  pipelines.actions.githubusercontent.com
+13.107.253.69                 vscode.dev
 
 
-# Update time: 2026-07-11T11:26:38+08:00
+# Update time: 2026-07-11T11:37:02+08:00
 # Platform: github
 # GitHub520 Host End
