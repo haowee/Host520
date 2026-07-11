@@ -24,11 +24,11 @@
     "steamcdn-a.akamaihd.net"
   ],
   [
-    "23.192.228.141",
+    "23.192.228.154",
     "store.akamai.steamstatic.com"
   ],
   [
-    "23.192.228.147",
+    "96.16.55.107",
     "cdn.akamai.steamstatic.com"
   ],
   [
@@ -48,31 +48,27 @@
     "steamgames.com"
   ],
   [
-    "20.29.134.23",
-    "github.com"
+    "128.242.240.212",
+    "github.global.ssl.fastly.net"
   ],
   [
-    "20.29.134.23",
-    "gist.github.com"
-  ],
-  [
-    "16.15.183.173",
+    "16.15.254.111",
     "github-cloud.s3.amazonaws.com"
   ],
   [
-    "16.15.183.173",
+    "52.217.173.105",
     "github-com.s3.amazonaws.com"
   ],
   [
-    "16.15.183.173",
+    "52.216.58.145",
     "github-production-release-asset-2e65be.s3.amazonaws.com"
   ],
   [
-    "16.15.183.173",
+    "52.216.216.169",
     "github-production-repository-file-5c1aeb.s3.amazonaws.com"
   ],
   [
-    "16.15.245.132",
+    "52.216.28.92",
     "github-production-user-asset-6210df.s3.amazonaws.com"
   ],
   [
@@ -80,7 +76,7 @@
     "pipelines.actions.githubusercontent.com"
   ],
   [
-    "13.107.253.69",
+    "13.107.226.69",
     "vscode.dev"
   ]
 ]
