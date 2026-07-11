@@ -4,7 +4,7 @@
     "github.com"
   ],
   [
-    "140.82.121.5",
+    "140.82.121.6",
     "api.github.com"
   ],
   [
@@ -16,7 +16,7 @@
     "github.blog"
   ],
   [
-    "140.82.113.17",
+    "140.82.112.18",
     "github.community"
   ],
   [
@@ -108,23 +108,23 @@
     "github.map.fastly.net"
   ],
   [
-    "16.15.212.167",
+    "16.15.199.45",
     "github-cloud.s3.amazonaws.com"
   ],
   [
-    "16.15.213.253",
+    "16.15.199.45",
     "github-com.s3.amazonaws.com"
   ],
   [
-    "16.15.212.167",
+    "16.15.199.45",
     "github-production-release-asset-2e65be.s3.amazonaws.com"
   ],
   [
-    "16.15.212.167",
+    "16.15.183.29",
     "github-production-repository-file-5c1aeb.s3.amazonaws.com"
   ],
   [
-    "16.15.212.167",
+    "16.15.199.45",
     "github-production-user-asset-6210df.s3.amazonaws.com"
   ],
   [
@@ -132,19 +132,19 @@
     "pipelines.actions.githubusercontent.com"
   ],
   [
-    "140.82.112.22",
+    "140.82.114.22",
     "central.github.com"
   ],
   [
-    "140.82.112.22",
+    "140.82.114.22",
     "collector.github.com"
   ],
   [
-    "140.82.112.26",
+    "140.82.113.25",
     "live.github.com"
   ],
   [
-    "140.82.112.22",
+    "140.82.114.22",
     "education.github.com"
   ],
   [
