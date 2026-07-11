@@ -1,22 +1,42 @@
 [
   [
-    "52.217.174.193",
+    "20.205.243.166",
+    "github.com"
+  ],
+  [
+    "20.205.243.168",
+    "api.github.com"
+  ],
+  [
+    "20.205.243.165",
+    "codeload.github.com"
+  ],
+  [
+    "20.205.243.166",
+    "gist.github.com"
+  ],
+  [
+    "103.214.168.106",
+    "github.global.ssl.fastly.net"
+  ],
+  [
+    "16.15.245.41",
     "github-cloud.s3.amazonaws.com"
   ],
   [
-    "16.182.32.145",
+    "16.15.228.90",
     "github-com.s3.amazonaws.com"
   ],
   [
-    "52.216.213.105",
+    "16.15.253.98",
     "github-production-release-asset-2e65be.s3.amazonaws.com"
   ],
   [
-    "16.15.228.44",
+    "16.15.236.19",
     "github-production-repository-file-5c1aeb.s3.amazonaws.com"
   ],
   [
-    "52.216.207.11",
+    "16.15.228.191",
     "github-production-user-asset-6210df.s3.amazonaws.com"
   ],
   [

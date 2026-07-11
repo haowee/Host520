@@ -6,9 +6,7 @@
 #   Desc    :   获取最新的平台域名对应 IP
 #
 
-import re
 import sys
-import random
 import asyncio
 import logging
 from typing import List, Tuple, Optional, Dict, Any
@@ -16,15 +14,11 @@ from typing import List, Tuple, Optional, Dict, Any
 import aiohttp
 import aiodns
 
+from retry import retry
+
 from common import DNS_SERVER_LIST, DISCARD_LIST
 
 # -------------------------- 可配置参数 --------------------------
-
-# 代理配置，国内运行请填写代理地址，例如 "http://127.0.0.1:7890"，不需要代理填 None
-PROXY = None
-
-# 最大并发数，不宜过高避免触发反爬
-MAX_CONCURRENCY = 5
 
 # 请求超时时间(秒)
 REQUEST_TIMEOUT = 10
@@ -34,10 +28,6 @@ PING_TIMEOUT = 3
 
 # 最大重试次数
 MAX_RETRY = 3
-
-# 请求最小/最大间隔(秒)，随机延迟防反爬
-MIN_DELAY = 0.5
-MAX_DELAY = 1.5
 
 # 目标测速端口
 TEST_PORT = 443
@@ -63,19 +53,6 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
 logger = logging.getLogger(__name__)
-
-# 随机 User-Agent 池，防反爬
-USER_AGENTS = [
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15",
-]
-
-# IPv4 地址精确正则
-IP_PATTERN = re.compile(
-    r'(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)'
-)
 
 
 def windows_compatibility_check():
@@ -118,63 +95,29 @@ def is_valid_public_ip(ip: str) -> bool:
         return False
 
 
-async def fetch_ips_from_ipaddress(domain: str, semaphore: asyncio.Semaphore) -> List[str]:
-    """从 ipaddress.com 爬取指定域名的 IP，带反爬和重试"""
-    url = f"https://www.ipaddress.com/site/{domain}"
-    headers = {"User-Agent": random.choice(USER_AGENTS)}
-
-    for retry in range(MAX_RETRY):
-        try:
-            async with semaphore:
-                await asyncio.sleep(random.uniform(MIN_DELAY, MAX_DELAY))
-                timeout = aiohttp.ClientTimeout(total=REQUEST_TIMEOUT)
-                async with aiohttp.ClientSession(timeout=timeout) as session:
-                    async with session.get(url, headers=headers, proxy=PROXY) as resp:
-                        if resp.status != 200:
-                            logger.warning(f"{domain} 请求失败，状态码：{resp.status}，重试：{retry+1}/{MAX_RETRY}")
-                            await asyncio.sleep(2 ** (retry + 1))
-                            continue
-                        html = await resp.text()
-
-                        # 优化解析：只匹配 IP 区块内容
-                        try:
-                            ip_section = html.split("<h3>IP Addresses</h3>")[-1].split("<h3>")[0]
-                        except (IndexError, ValueError):
-                            ip_section = html
-
-                        ips = IP_PATTERN.findall(ip_section)
-                        valid_ips = list(filter(is_valid_public_ip, set(ips)))
-                        logger.info(f"{domain} 爬取到 {len(valid_ips)} 个有效公网 IP")
-                        return valid_ips
-        except Exception as e:
-            logger.warning(f"{domain} 请求异常：{str(e)}，重试：{retry+1}/{MAX_RETRY}")
-            await asyncio.sleep(2 ** (retry + 1))
-
-    logger.error(f"{domain} 爬取失败，已达最大重试次数")
-    return []
-
-
 async def resolve_ips_from_doh(domain: str) -> List[str]:
     """通过 DNS over HTTPS (DoH) 获取 IP，优先使用国内 DoH 服务器"""
     for doh_url in DOH_SERVERS:
-        try:
-            timeout = aiohttp.ClientTimeout(total=DOH_TIMEOUT)
-            async with aiohttp.ClientSession(timeout=timeout) as session:
-                params = {"name": domain, "type": "A"}
-                headers = {"Accept": "application/dns-json"}
-                async with session.get(doh_url, params=params, headers=headers) as resp:
-                    if resp.status != 200:
-                        continue
-                    data = await resp.json()
-                    if data.get("Status") == 0 and "Answer" in data:
-                        ips = [r["data"] for r in data["Answer"] if r.get("type") == 1]
-                        valid_ips = [ip for ip in ips if is_valid_public_ip(ip)]
-                        if valid_ips:
-                            logger.info(f"DoH {doh_url} -> {domain}: {valid_ips}")
-                            return valid_ips
-        except Exception as e:
-            logger.debug(f"DoH query {doh_url} for {domain} failed: {e}")
-            continue
+        for retry in range(MAX_RETRY):
+            try:
+                timeout = aiohttp.ClientTimeout(total=DOH_TIMEOUT)
+                async with aiohttp.ClientSession(timeout=timeout) as session:
+                    params = {"name": domain, "type": "A"}
+                    headers = {"Accept": "application/dns-json"}
+                    async with session.get(doh_url, params=params, headers=headers) as resp:
+                        if resp.status != 200:
+                            await asyncio.sleep(1)
+                            continue
+                        data = await resp.json()
+                        if data.get("Status") == 0 and "Answer" in data:
+                            ips = [r["data"] for r in data["Answer"] if r.get("type") == 1]
+                            valid_ips = [ip for ip in ips if is_valid_public_ip(ip)]
+                            if valid_ips:
+                                logger.info(f"DoH {doh_url} -> {domain}: {valid_ips}")
+                                return valid_ips
+            except Exception as e:
+                logger.debug(f"DoH query {doh_url} for {domain} failed (retry {retry+1}): {e}")
+                await asyncio.sleep(1)
     return []
 
 
@@ -239,22 +182,21 @@ async def select_best_ip(candidate_ips: List[str], domain: str) -> Optional[str]
     return candidate_ips[0]
 
 
-async def process_domain(domain: str, semaphore: asyncio.Semaphore, resolver: aiodns.DNSResolver) -> Tuple[str, Optional[str]]:
-    """处理单个域名：合并爬取+DNS+DoH 的候选 IP，选最优"""
+async def process_domain(domain: str, resolver: aiodns.DNSResolver) -> Tuple[str, Optional[str]]:
+    """处理单个域名：合并 DNS+DoH 的候选 IP，选最优"""
     domain = domain.strip()
     if not domain or domain.startswith("#"):
         return (domain, None)
 
-    # 并发获取三个来源的 IP
-    ip_web_task = fetch_ips_from_ipaddress(domain, semaphore)
+    # 并发获取两个来源的 IP
     ip_dns_task = resolve_ips_from_dns(domain, resolver)
     ip_doh_task = resolve_ips_from_doh(domain)
 
-    ip_list_web, ip_list_dns, ip_list_doh = await asyncio.gather(
-        ip_web_task, ip_dns_task, ip_doh_task
+    ip_list_dns, ip_list_doh = await asyncio.gather(
+        ip_dns_task, ip_doh_task
     )
 
-    all_ips = list(set(ip_list_web + ip_list_dns + ip_list_doh))
+    all_ips = list(set(ip_list_dns + ip_list_doh))
 
     if not all_ips:
         return (domain, None)
@@ -271,12 +213,11 @@ def fetch_ips_for_platform(platform_urls: List[str], verbose: bool = False) -> T
         print(f'Start fetching IPs for platform...')
 
     async def _fetch_all():
-        semaphore = asyncio.Semaphore(MAX_CONCURRENCY)
         resolver = aiodns.DNSResolver(
             nameservers=[s.split(':')[0] for s in DNS_SERVER_LIST],
             timeout=REQUEST_TIMEOUT
         )
-        tasks = [process_domain(domain, semaphore, resolver) for domain in platform_urls]
+        tasks = [process_domain(domain, resolver) for domain in platform_urls]
         return await asyncio.gather(*tasks)
 
     results = asyncio.run(_fetch_all())
