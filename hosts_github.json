@@ -8,7 +8,7 @@
     "api.github.com"
   ],
   [
-    "185.199.108.153",
+    "185.199.110.153",
     "github.io"
   ],
   [
@@ -20,11 +20,11 @@
     "github.community"
   ],
   [
-    "185.199.108.153",
+    "185.199.110.153",
     "githubstatus.com"
   ],
   [
-    "185.199.108.215",
+    "185.199.110.215",
     "github.githubassets.com"
   ],
   [
@@ -96,11 +96,11 @@
     "gist.github.com"
   ],
   [
-    "185.199.111.133",
+    "185.199.110.133",
     "gist.githubusercontent.com"
   ],
   [
-    "154.83.14.134",
+    "146.75.45.194",
     "github.global.ssl.fastly.net"
   ],
   [
@@ -108,23 +108,23 @@
     "github.map.fastly.net"
   ],
   [
-    "52.217.139.113",
+    "52.217.118.9",
     "github-cloud.s3.amazonaws.com"
   ],
   [
-    "16.182.69.65",
+    "16.182.34.105",
     "github-com.s3.amazonaws.com"
   ],
   [
-    "54.231.132.1",
+    "52.217.235.185",
     "github-production-release-asset-2e65be.s3.amazonaws.com"
   ],
   [
-    "52.216.34.89",
+    "54.231.194.233",
     "github-production-repository-file-5c1aeb.s3.amazonaws.com"
   ],
   [
-    "52.216.76.164",
+    "52.217.84.28",
     "github-production-user-asset-6210df.s3.amazonaws.com"
   ],
   [
@@ -132,7 +132,7 @@
     "pipelines.actions.githubusercontent.com"
   ],
   [
-    "140.82.113.21",
+    "140.82.112.22",
     "central.github.com"
   ],
   [
@@ -140,15 +140,15 @@
     "collector.github.com"
   ],
   [
-    "140.82.113.25",
+    "140.82.113.26",
     "live.github.com"
   ],
   [
-    "140.82.113.21",
+    "140.82.114.21",
     "education.github.com"
   ],
   [
-    "150.171.110.98",
+    "150.171.110.97",
     "vscode.dev"
   ],
   [
