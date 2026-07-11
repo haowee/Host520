@@ -1,4 +1,3 @@
-requests-html
+aiohttp
 aiodns
 retry
-lxml_html_clean
