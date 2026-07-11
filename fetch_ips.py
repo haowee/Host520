@@ -42,6 +42,19 @@ MAX_DELAY = 1.5
 # 目标测速端口
 TEST_PORT = 443
 
+# DoH (DNS over HTTPS) 服务器列表
+DOH_SERVERS = [
+    "https://dns.alidns.com/resolve",       # 阿里 DoH（国内视角）
+    "https://doh.pub/dns-query",            # DNSPod DoH（国内视角）
+    "https://dns.google/resolve",           # Google DoH（备用）
+]
+
+# DoH 请求超时时间(秒)
+DOH_TIMEOUT = 5
+
+# 延迟测试次数
+PING_TEST_COUNT = 3
+
 # ---------------------------------------------------------------
 
 # 日志配置
@@ -141,6 +154,30 @@ async def fetch_ips_from_ipaddress(domain: str, semaphore: asyncio.Semaphore) ->
     return []
 
 
+async def resolve_ips_from_doh(domain: str) -> List[str]:
+    """通过 DNS over HTTPS (DoH) 获取 IP，优先使用国内 DoH 服务器"""
+    for doh_url in DOH_SERVERS:
+        try:
+            timeout = aiohttp.ClientTimeout(total=DOH_TIMEOUT)
+            async with aiohttp.ClientSession(timeout=timeout) as session:
+                params = {"name": domain, "type": "A"}
+                headers = {"Accept": "application/dns-json"}
+                async with session.get(doh_url, params=params, headers=headers) as resp:
+                    if resp.status != 200:
+                        continue
+                    data = await resp.json()
+                    if data.get("Status") == 0 and "Answer" in data:
+                        ips = [r["data"] for r in data["Answer"] if r.get("type") == 1]
+                        valid_ips = [ip for ip in ips if is_valid_public_ip(ip)]
+                        if valid_ips:
+                            logger.info(f"DoH {doh_url} -> {domain}: {valid_ips}")
+                            return valid_ips
+        except Exception as e:
+            logger.debug(f"DoH query {doh_url} for {domain} failed: {e}")
+            continue
+    return []
+
+
 async def resolve_ips_from_dns(domain: str, resolver: aiodns.DNSResolver) -> List[str]:
     """从 DNS 解析获取候选 IP"""
     try:
@@ -154,18 +191,31 @@ async def resolve_ips_from_dns(domain: str, resolver: aiodns.DNSResolver) -> Lis
         return []
 
 
+# 延迟测试缓存
+PING_CACHE: Dict[str, float] = {}
+
+
 async def test_ip_latency(ip: str) -> Tuple[float, str]:
-    """测试单个 IP 的 TCP 延迟，返回 (延迟ms, IP)"""
-    try:
-        start = asyncio.get_event_loop().time()
-        conn = asyncio.open_connection(ip, TEST_PORT)
-        reader, writer = await asyncio.wait_for(conn, timeout=PING_TIMEOUT)
-        latency = (asyncio.get_event_loop().time() - start) * 1000
-        writer.close()
-        await writer.wait_closed()
-        return (latency, ip)
-    except (asyncio.TimeoutError, Exception):
-        return (float('inf'), ip)
+    """测试 IP 的 TCP 延迟，多次测试取中位数，带缓存"""
+    if ip in PING_CACHE:
+        return (PING_CACHE[ip], ip)
+
+    latencies = []
+    for _ in range(PING_TEST_COUNT):
+        try:
+            start = asyncio.get_event_loop().time()
+            conn = asyncio.open_connection(ip, TEST_PORT)
+            reader, writer = await asyncio.wait_for(conn, timeout=PING_TIMEOUT)
+            latencies.append((asyncio.get_event_loop().time() - start) * 1000)
+            writer.close()
+            await writer.wait_closed()
+        except (asyncio.TimeoutError, Exception):
+            latencies.append(PING_TIMEOUT * 1000)
+
+    latencies.sort()
+    median_latency = latencies[1]  # 取中位数
+    PING_CACHE[ip] = median_latency
+    return (median_latency, ip)
 
 
 async def select_best_ip(candidate_ips: List[str], domain: str) -> Optional[str]:
@@ -190,15 +240,21 @@ async def select_best_ip(candidate_ips: List[str], domain: str) -> Optional[str]
 
 
 async def process_domain(domain: str, semaphore: asyncio.Semaphore, resolver: aiodns.DNSResolver) -> Tuple[str, Optional[str]]:
-    """处理单个域名：合并爬取+DNS 的候选 IP，选最优"""
+    """处理单个域名：合并爬取+DNS+DoH 的候选 IP，选最优"""
     domain = domain.strip()
     if not domain or domain.startswith("#"):
         return (domain, None)
 
-    ip_list_web = await fetch_ips_from_ipaddress(domain, semaphore)
-    ip_list_dns = await resolve_ips_from_dns(domain, resolver)
+    # 并发获取三个来源的 IP
+    ip_web_task = fetch_ips_from_ipaddress(domain, semaphore)
+    ip_dns_task = resolve_ips_from_dns(domain, resolver)
+    ip_doh_task = resolve_ips_from_doh(domain)
 
-    all_ips = list(set(ip_list_web + ip_list_dns))
+    ip_list_web, ip_list_dns, ip_list_doh = await asyncio.gather(
+        ip_web_task, ip_dns_task, ip_doh_task
+    )
+
+    all_ips = list(set(ip_list_web + ip_list_dns + ip_list_doh))
 
     if not all_ips:
         return (domain, None)
@@ -231,7 +287,11 @@ def fetch_ips_for_platform(platform_urls: List[str], verbose: bool = False) -> T
     for i, domain in enumerate(platform_urls):
         domain_result, best_ip = results[i]
         if best_ip:
-            content += best_ip.ljust(30) + domain + "\n"
+            line = best_ip.ljust(30) + domain
+            # 标记超时 IP
+            if PING_CACHE.get(best_ip) == PING_TIMEOUT * 1000:
+                line += "  # Timeout"
+            content += line + "\n"
             content_list.append((best_ip, domain))
 
     if verbose:
