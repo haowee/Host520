@@ -1,21 +1,21 @@
 # Host520 Host Start
 # Steam520 Host Start
-23.35.29.201                  store.steampowered.com
+23.48.9.171                   store.steampowered.com
 23.214.233.226                steamcommunity.com
 23.214.233.226                api.steampowered.com
-184.24.66.44                  help.steampowered.com
+23.214.233.226                help.steampowered.com
 23.213.69.74                  steampowered.com
-199.232.215.52                cdn.steamstatic.com
-23.199.55.31                  steamcdn-a.akamaihd.net
-23.219.154.18                 store.akamai.steamstatic.com
-23.219.154.22                 cdn.akamai.steamstatic.com
-23.219.154.27                 community.akamai.steamstatic.com
+199.232.211.52                cdn.steamstatic.com
+23.215.0.133                  steamcdn-a.akamaihd.net
+23.199.55.6                   store.akamai.steamstatic.com
+23.199.55.31                  cdn.akamai.steamstatic.com
+23.199.55.60                  community.akamai.steamstatic.com
 23.213.69.74                  steam-chat.com
 23.213.69.74                  steam.tv
 23.213.69.74                  steamgames.com
 
 
-# Update time: 2026-07-12T13:33:30+08:00
+# Update time: 2026-07-12T13:44:22+08:00
 # Platform: steam
 # Steam520 Host End
 
@@ -44,7 +44,7 @@
 185.199.109.133               cloud.githubusercontent.com
 20.205.243.165                codeload.github.com
 203.98.7.65                   gist.github.com
-185.199.110.133               gist.githubusercontent.com
+185.199.108.133               gist.githubusercontent.com
 157.240.20.8                  github.global.ssl.fastly.net
 185.199.109.133               github.map.fastly.net
 52.217.73.4                   github-cloud.s3.amazonaws.com
@@ -61,13 +61,13 @@
 185.199.109.133               private-user-images.githubusercontent.com
 
 
-# Update time: 2026-07-12T13:33:30+08:00
+# Update time: 2026-07-12T13:44:22+08:00
 # Platform: github
 # GitHub520 Host End
 
 
 
-# Update time: 2026-07-12T13:33:30+08:00
+# Update time: 2026-07-12T13:44:22+08:00
 # Update url: https://raw.githubusercontent.com/haowee/Host520/main/hosts
 # Star me: https://github.com/haowee/Host520
 # Host520 Host End
