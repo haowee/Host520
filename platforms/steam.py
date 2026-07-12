@@ -15,6 +15,10 @@ URLS = [
     'api.steampowered.com',
     'help.steampowered.com',
     'steampowered.com',
+    'login.steampowered.com',
+    'store.steamstatic.com',
+    'clientconfig.steamcommunity.com',
+    'support.steampowered.com',
     # 下载与CDN
     'content.steampowered.com',
     'cdn.steamstatic.com',
@@ -23,6 +27,11 @@ URLS = [
     'store.akamai.steamstatic.com',
     'cdn.akamai.steamstatic.com',
     'community.akamai.steamstatic.com',
+    'media.steampowered.com',
+    'cs.steampowered.com',
+    'client-download.steampowered.com',
+    'cdn.cloudflare.steamstatic.com',
+    'cdn.fastly.steamstatic.com',
     # 社区功能
     'steam-chat.com',
     'steam.tv',
@@ -31,8 +40,14 @@ URLS = [
     'steamusercontent.com',
     'steamcontent.com',
     'steamserver.net',
+    'steamcommunity-a.akamaihd.net',
+    'steamuserimages-a.akamaihd.net',
+    'steammobile.akamaized.net',
     # 游戏相关
     'steamgames.com',
+    'valve.net',
+    's.team',
+    'steamchina.com',
 ]
 
 # hosts 文件标记
