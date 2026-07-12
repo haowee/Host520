@@ -95,30 +95,44 @@ def is_valid_public_ip(ip: str) -> bool:
         return False
 
 
-async def resolve_ips_from_doh(domain: str) -> List[str]:
-    """通过 DNS over HTTPS (DoH) 获取 IP，优先使用国内 DoH 服务器"""
-    for doh_url in DOH_SERVERS:
-        for retry in range(MAX_RETRY):
-            try:
-                timeout = aiohttp.ClientTimeout(total=DOH_TIMEOUT)
-                async with aiohttp.ClientSession(timeout=timeout) as session:
-                    params = {"name": domain, "type": "A"}
-                    headers = {"Accept": "application/dns-json"}
-                    async with session.get(doh_url, params=params, headers=headers) as resp:
-                        if resp.status != 200:
-                            await asyncio.sleep(1)
-                            continue
-                        data = await resp.json()
-                        if data.get("Status") == 0 and "Answer" in data:
-                            ips = [r["data"] for r in data["Answer"] if r.get("type") == 1]
-                            valid_ips = [ip for ip in ips if is_valid_public_ip(ip)]
-                            if valid_ips:
-                                logger.info(f"DoH {doh_url} -> {domain}: {valid_ips}")
-                                return valid_ips
-            except Exception as e:
-                logger.debug(f"DoH query {doh_url} for {domain} failed (retry {retry+1}): {e}")
-                await asyncio.sleep(1)
+async def _query_doh_single(doh_url: str, domain: str) -> List[str]:
+    """查询单个 DoH 服务器"""
+    for retry in range(MAX_RETRY):
+        try:
+            timeout = aiohttp.ClientTimeout(total=DOH_TIMEOUT)
+            async with aiohttp.ClientSession(timeout=timeout) as session:
+                params = {"name": domain, "type": "A"}
+                headers = {"Accept": "application/dns-json"}
+                async with session.get(doh_url, params=params, headers=headers) as resp:
+                    if resp.status != 200:
+                        await asyncio.sleep(1)
+                        continue
+                    data = await resp.json()
+                    if data.get("Status") == 0 and "Answer" in data:
+                        ips = [r["data"] for r in data["Answer"] if r.get("type") == 1]
+                        valid_ips = [ip for ip in ips if is_valid_public_ip(ip)]
+                        if valid_ips:
+                            return valid_ips
+        except Exception as e:
+            logger.debug(f"DoH query {doh_url} for {domain} failed (retry {retry+1}): {e}")
+            await asyncio.sleep(1)
     return []
+
+
+async def resolve_ips_from_doh(domain: str) -> List[str]:
+    """通过 DNS over HTTPS (DoH) 获取 IP，并行查询所有 DoH 服务器并合并结果"""
+    tasks = [_query_doh_single(url, domain) for url in DOH_SERVERS]
+    results = await asyncio.gather(*tasks, return_exceptions=True)
+
+    all_ips = []
+    for ips in results:
+        if isinstance(ips, list):
+            all_ips.extend(ips)
+
+    merged = list(set(all_ips))
+    if merged:
+        logger.info(f"DoH 并行查询 {domain}: {merged}")
+    return merged
 
 
 async def resolve_ips_from_dns(domain: str, resolver: aiodns.DNSResolver) -> List[str]:
@@ -177,9 +191,9 @@ async def select_best_ip(candidate_ips: List[str], domain: str) -> Optional[str]
             logger.info(f"{domain} 选出最优 IP: {ip} 延迟: {latency:.2f}ms")
             return ip
 
-    # 如果所有 IP 都超时，回退到第一个有效 IP
-    logger.warning(f"{domain} 所有 IP 延迟测试超时，使用第一个有效 IP")
-    return candidate_ips[0]
+    # 如果所有 IP 都超时，跳过该域名
+    logger.warning(f"{domain} 所有 IP 延迟测试超时，跳过")
+    return None
 
 
 async def process_domain(domain: str, resolver: aiodns.DNSResolver) -> Tuple[str, Optional[str]]:
