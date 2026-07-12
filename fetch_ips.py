@@ -36,7 +36,8 @@ TEST_PORT = 443
 DOH_SERVERS = [
     "https://dns.alidns.com/resolve",       # 阿里 DoH（国内视角）
     "https://doh.pub/dns-query",            # DNSPod DoH（国内视角）
-    "https://dns.google/resolve",           # Google DoH（备用）
+    "https://cloudflare-dns.com/dns-query", # Cloudflare DoH（海外备选）
+    "https://dns.google/resolve",           # Google DoH（海外备选）
 ]
 
 # DoH 请求超时时间(秒)
