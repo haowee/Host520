@@ -1,31 +1,35 @@
 [
   [
-    "23.52.117.221",
+    "173.222.168.168",
     "store.steampowered.com"
   ],
   [
-    "184.86.165.128",
+    "23.214.233.226",
     "steamcommunity.com"
   ],
   [
-    "184.86.165.128",
+    "23.214.233.226",
     "api.steampowered.com"
   ],
   [
-    "184.86.165.128",
+    "23.214.233.226",
     "help.steampowered.com"
   ],
   [
-    "104.94.66.6",
+    "23.213.69.74",
     "steampowered.com"
   ],
   [
-    "184.86.165.128",
+    "23.214.233.226",
     "login.steampowered.com"
   ],
   [
-    "199.232.211.52",
+    "199.232.215.52",
     "store.steamstatic.com"
+  ],
+  [
+    "104.244.46.63",
+    "clientconfig.steamcommunity.com"
   ],
   [
     "172.234.232.226",
@@ -36,31 +40,31 @@
     "cdn.steamstatic.com"
   ],
   [
-    "23.47.48.78",
+    "23.199.55.40",
     "steamcdn-a.akamaihd.net"
   ],
   [
-    "23.219.89.207",
+    "23.199.55.42",
     "store.akamai.steamstatic.com"
   ],
   [
-    "23.222.27.31",
+    "104.96.221.66",
     "cdn.akamai.steamstatic.com"
   ],
   [
-    "23.219.89.196",
+    "23.199.55.59",
     "community.akamai.steamstatic.com"
   ],
   [
-    "23.222.27.31",
+    "23.199.55.40",
     "media.steampowered.com"
   ],
   [
-    "162.254.195.4",
+    "162.254.192.2",
     "cs.steampowered.com"
   ],
   [
-    "23.47.50.75",
+    "23.207.202.186",
     "cdn.cloudflare.steamstatic.com"
   ],
   [
@@ -68,31 +72,31 @@
     "cdn.fastly.steamstatic.com"
   ],
   [
-    "104.94.66.6",
+    "23.213.69.74",
     "steam-chat.com"
   ],
   [
-    "104.94.66.6",
+    "23.213.69.74",
     "steam.tv"
   ],
   [
-    "23.219.89.196",
+    "23.199.55.59",
     "steamcommunity-a.akamaihd.net"
   ],
   [
-    "23.219.89.206",
+    "23.199.55.25",
     "steamuserimages-a.akamaihd.net"
   ],
   [
-    "23.220.162.151",
+    "23.205.106.180",
     "steammobile.akamaized.net"
   ],
   [
-    "104.94.66.6",
+    "23.213.69.74",
     "steamgames.com"
   ],
   [
-    "104.94.66.6",
+    "23.213.69.74",
     "s.team"
   ],
   [
