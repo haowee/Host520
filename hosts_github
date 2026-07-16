@@ -1,11 +1,11 @@
 # GitHub520 Host Start
 20.205.243.166                github.com
 20.205.243.168                api.github.com
-185.199.111.153               github.io
+185.199.109.153               github.io
 192.0.66.2                    github.blog
-140.82.114.17                 github.community
-185.199.111.153               githubstatus.com
-185.199.110.215               github.githubassets.com
+140.82.114.18                 github.community
+185.199.109.153               githubstatus.com
+185.199.111.215               github.githubassets.com
 185.199.109.133               raw.githubusercontent.com
 185.199.109.133               user-images.githubusercontent.com
 185.199.109.133               avatars.githubusercontent.com
@@ -22,24 +22,24 @@
 185.199.109.133               objects.githubusercontent.com
 185.199.109.133               cloud.githubusercontent.com
 20.205.243.165                codeload.github.com
-59.24.3.173                   gist.github.com
-185.199.109.133               gist.githubusercontent.com
-157.240.12.5                  github.global.ssl.fastly.net
+140.82.113.4                  gist.github.com
+185.199.108.133               gist.githubusercontent.com
+199.59.149.210                github.global.ssl.fastly.net
 185.199.109.133               github.map.fastly.net
-52.216.89.19                  github-cloud.s3.amazonaws.com
-52.216.50.169                 github-com.s3.amazonaws.com
-52.216.9.251                  github-production-release-asset-2e65be.s3.amazonaws.com
-52.216.217.1                  github-production-repository-file-5c1aeb.s3.amazonaws.com
-54.231.193.169                github-production-user-asset-6210df.s3.amazonaws.com
+16.182.73.153                 github-cloud.s3.amazonaws.com
+16.15.244.237                 github-com.s3.amazonaws.com
+16.15.223.60                  github-production-release-asset-2e65be.s3.amazonaws.com
+16.15.244.237                 github-production-repository-file-5c1aeb.s3.amazonaws.com
+52.217.161.89                 github-production-user-asset-6210df.s3.amazonaws.com
 13.107.42.16                  pipelines.actions.githubusercontent.com
-140.82.114.22                 central.github.com
-140.82.112.22                 collector.github.com
+140.82.112.21                 central.github.com
+140.82.114.22                 collector.github.com
 140.82.112.26                 live.github.com
-140.82.112.21                 education.github.com
+140.82.114.22                 education.github.com
 150.171.110.98                vscode.dev
 185.199.109.133               private-user-images.githubusercontent.com
 
 
-# Update time: 2026-07-15T17:50:13+08:00
+# Update time: 2026-07-16T17:57:00+08:00
 # Platform: github
 # GitHub520 Host End
