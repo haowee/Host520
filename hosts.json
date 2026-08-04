@@ -1,6 +1,6 @@
 [
   [
-    "23.202.153.171",
+    "173.222.168.168",
     "store.steampowered.com"
   ],
   [
@@ -40,27 +40,27 @@
     "steamcdn-a.akamaihd.net"
   ],
   [
-    "23.54.127.42",
+    "23.199.55.42",
     "store.akamai.steamstatic.com"
   ],
   [
-    "23.54.127.47",
+    "23.199.55.31",
     "cdn.akamai.steamstatic.com"
   ],
   [
-    "23.3.13.152",
+    "23.223.247.217",
     "community.akamai.steamstatic.com"
   ],
   [
-    "23.3.13.152",
+    "23.199.55.31",
     "media.steampowered.com"
   ],
   [
-    "162.254.192.20",
+    "162.254.192.2",
     "cs.steampowered.com"
   ],
   [
-    "23.53.11.250",
+    "23.46.15.41",
     "cdn.cloudflare.steamstatic.com"
   ],
   [
@@ -76,15 +76,15 @@
     "steam.tv"
   ],
   [
-    "23.54.127.40",
+    "23.223.247.217",
     "steamcommunity-a.akamaihd.net"
   ],
   [
-    "23.3.13.90",
+    "23.199.55.47",
     "steamuserimages-a.akamaihd.net"
   ],
   [
-    "23.205.106.144",
+    "23.205.106.180",
     "steammobile.akamaized.net"
   ],
   [
@@ -108,7 +108,7 @@
     "api.github.com"
   ],
   [
-    "185.199.109.153",
+    "185.199.108.153",
     "github.io"
   ],
   [
@@ -120,7 +120,7 @@
     "github.community"
   ],
   [
-    "185.199.109.153",
+    "185.199.108.153",
     "githubstatus.com"
   ],
   [
@@ -192,7 +192,7 @@
     "codeload.github.com"
   ],
   [
-    "37.61.54.158",
+    "46.82.174.68",
     "gist.github.com"
   ],
   [
@@ -200,7 +200,7 @@
     "gist.githubusercontent.com"
   ],
   [
-    "199.59.148.6",
+    "108.160.169.186",
     "github.global.ssl.fastly.net"
   ],
   [
@@ -208,23 +208,23 @@
     "github.map.fastly.net"
   ],
   [
-    "16.15.237.156",
+    "16.15.199.49",
     "github-cloud.s3.amazonaws.com"
   ],
   [
-    "52.217.125.169",
+    "16.15.254.155",
     "github-com.s3.amazonaws.com"
   ],
   [
-    "16.15.191.28",
+    "16.15.228.181",
     "github-production-release-asset-2e65be.s3.amazonaws.com"
   ],
   [
-    "16.15.236.58",
+    "16.15.245.218",
     "github-production-repository-file-5c1aeb.s3.amazonaws.com"
   ],
   [
-    "16.15.212.167",
+    "16.15.212.84",
     "github-production-user-asset-6210df.s3.amazonaws.com"
   ],
   [
@@ -232,15 +232,15 @@
     "pipelines.actions.githubusercontent.com"
   ],
   [
-    "140.82.114.21",
+    "140.82.112.21",
     "central.github.com"
   ],
   [
-    "140.82.114.22",
+    "140.82.113.22",
     "collector.github.com"
   ],
   [
-    "140.82.113.25",
+    "140.82.114.25",
     "live.github.com"
   ],
   [
@@ -248,7 +248,7 @@
     "education.github.com"
   ],
   [
-    "150.171.110.102",
+    "150.171.110.98",
     "vscode.dev"
   ],
   [
