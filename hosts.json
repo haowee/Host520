@@ -4,15 +4,15 @@
     "store.steampowered.com"
   ],
   [
-    "23.219.8.226",
+    "23.202.152.218",
     "steamcommunity.com"
   ],
   [
-    "23.212.251.198",
+    "23.212.251.81",
     "api.steampowered.com"
   ],
   [
-    "104.86.82.62",
+    "23.213.92.153",
     "help.steampowered.com"
   ],
   [
@@ -20,7 +20,7 @@
     "steampowered.com"
   ],
   [
-    "23.212.251.198",
+    "23.212.251.88",
     "login.steampowered.com"
   ],
   [
@@ -36,15 +36,15 @@
     "cdn.steamstatic.com"
   ],
   [
-    "23.199.55.31",
+    "23.215.0.137",
     "steamcdn-a.akamaihd.net"
   ],
   [
-    "23.213.158.86",
+    "23.199.55.54",
     "store.akamai.steamstatic.com"
   ],
   [
-    "23.199.55.31",
+    "23.199.55.44",
     "cdn.akamai.steamstatic.com"
   ],
   [
@@ -52,7 +52,7 @@
     "community.akamai.steamstatic.com"
   ],
   [
-    "23.199.55.31",
+    "173.223.163.207",
     "media.steampowered.com"
   ],
   [
@@ -60,11 +60,11 @@
     "cs.steampowered.com"
   ],
   [
-    "23.205.104.14",
+    "23.53.11.251",
     "cdn.cloudflare.steamstatic.com"
   ],
   [
-    "199.232.211.52",
+    "199.232.215.52",
     "cdn.fastly.steamstatic.com"
   ],
   [
@@ -76,15 +76,15 @@
     "steam.tv"
   ],
   [
-    "23.213.158.70",
+    "173.223.163.205",
     "steamcommunity-a.akamaihd.net"
   ],
   [
-    "23.199.55.4",
+    "173.223.163.214",
     "steamuserimages-a.akamaihd.net"
   ],
   [
-    "23.205.106.158",
+    "23.205.106.176",
     "steammobile.akamaized.net"
   ],
   [
@@ -108,7 +108,7 @@
     "api.github.com"
   ],
   [
-    "185.199.111.153",
+    "185.199.110.153",
     "github.io"
   ],
   [
@@ -120,7 +120,7 @@
     "github.community"
   ],
   [
-    "185.199.111.153",
+    "185.199.110.153",
     "githubstatus.com"
   ],
   [
@@ -128,63 +128,63 @@
     "github.githubassets.com"
   ],
   [
-    "185.199.108.133",
+    "185.199.111.133",
     "raw.githubusercontent.com"
   ],
   [
-    "185.199.108.133",
+    "185.199.111.133",
     "user-images.githubusercontent.com"
   ],
   [
-    "185.199.108.133",
+    "185.199.111.133",
     "avatars.githubusercontent.com"
   ],
   [
-    "185.199.108.133",
+    "185.199.111.133",
     "avatars0.githubusercontent.com"
   ],
   [
-    "185.199.108.133",
+    "185.199.111.133",
     "avatars1.githubusercontent.com"
   ],
   [
-    "185.199.108.133",
+    "185.199.111.133",
     "avatars2.githubusercontent.com"
   ],
   [
-    "185.199.108.133",
+    "185.199.111.133",
     "avatars3.githubusercontent.com"
   ],
   [
-    "185.199.108.133",
+    "185.199.111.133",
     "avatars4.githubusercontent.com"
   ],
   [
-    "185.199.108.133",
+    "185.199.111.133",
     "avatars5.githubusercontent.com"
   ],
   [
-    "185.199.108.133",
+    "185.199.111.133",
     "camo.githubusercontent.com"
   ],
   [
-    "185.199.108.133",
+    "185.199.111.133",
     "desktop.githubusercontent.com"
   ],
   [
-    "185.199.108.133",
+    "185.199.111.133",
     "favicons.githubusercontent.com"
   ],
   [
-    "185.199.108.133",
+    "185.199.111.133",
     "media.githubusercontent.com"
   ],
   [
-    "185.199.108.133",
+    "185.199.111.133",
     "objects.githubusercontent.com"
   ],
   [
-    "185.199.108.133",
+    "185.199.111.133",
     "cloud.githubusercontent.com"
   ],
   [
@@ -192,7 +192,7 @@
     "codeload.github.com"
   ],
   [
-    "20.205.243.166",
+    "46.82.174.68",
     "gist.github.com"
   ],
   [
@@ -200,31 +200,31 @@
     "gist.githubusercontent.com"
   ],
   [
-    "151.101.77.194",
+    "108.160.169.55",
     "github.global.ssl.fastly.net"
   ],
   [
-    "185.199.108.133",
+    "185.199.111.133",
     "github.map.fastly.net"
   ],
   [
-    "52.216.39.89",
+    "54.231.138.217",
     "github-cloud.s3.amazonaws.com"
   ],
   [
-    "16.15.245.189",
+    "16.15.212.136",
     "github-com.s3.amazonaws.com"
   ],
   [
-    "52.217.232.113",
+    "16.182.39.161",
     "github-production-release-asset-2e65be.s3.amazonaws.com"
   ],
   [
-    "52.217.126.57",
+    "16.182.68.73",
     "github-production-repository-file-5c1aeb.s3.amazonaws.com"
   ],
   [
-    "52.217.235.233",
+    "16.15.252.87",
     "github-production-user-asset-6210df.s3.amazonaws.com"
   ],
   [
@@ -232,15 +232,15 @@
     "pipelines.actions.githubusercontent.com"
   ],
   [
-    "140.82.113.21",
+    "140.82.114.21",
     "central.github.com"
   ],
   [
-    "140.82.113.21",
+    "140.82.113.22",
     "collector.github.com"
   ],
   [
-    "140.82.113.26",
+    "140.82.113.25",
     "live.github.com"
   ],
   [
@@ -252,7 +252,7 @@
     "vscode.dev"
   ],
   [
-    "185.199.108.133",
+    "185.199.111.133",
     "private-user-images.githubusercontent.com"
   ]
 ]
