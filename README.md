@@ -49,84 +49,84 @@ Host520 让你更流畅地访问 Steam、GitHub 等平台，解决访问时图�
 # GitHub520 Host Start
 20.205.243.166                github.com
 20.205.243.168                api.github.com
-185.199.110.153               github.io
+185.199.109.153               github.io
 192.0.66.2                    github.blog
 140.82.113.17                 github.community
-185.199.110.153               githubstatus.com
-185.199.111.215               github.githubassets.com
-185.199.108.133               raw.githubusercontent.com
-185.199.108.133               user-images.githubusercontent.com
-185.199.108.133               avatars.githubusercontent.com
-185.199.108.133               avatars0.githubusercontent.com
-185.199.108.133               avatars1.githubusercontent.com
-185.199.108.133               avatars2.githubusercontent.com
-185.199.108.133               avatars3.githubusercontent.com
-185.199.108.133               avatars4.githubusercontent.com
-185.199.108.133               avatars5.githubusercontent.com
-185.199.108.133               camo.githubusercontent.com
-185.199.108.133               desktop.githubusercontent.com
-185.199.108.133               favicons.githubusercontent.com
-185.199.108.133               media.githubusercontent.com
-185.199.108.133               objects.githubusercontent.com
-185.199.108.133               cloud.githubusercontent.com
+185.199.109.153               githubstatus.com
+185.199.108.215               github.githubassets.com
+185.199.111.133               raw.githubusercontent.com
+185.199.111.133               user-images.githubusercontent.com
+185.199.111.133               avatars.githubusercontent.com
+185.199.111.133               avatars0.githubusercontent.com
+185.199.111.133               avatars1.githubusercontent.com
+185.199.111.133               avatars2.githubusercontent.com
+185.199.111.133               avatars3.githubusercontent.com
+185.199.111.133               avatars4.githubusercontent.com
+185.199.111.133               avatars5.githubusercontent.com
+185.199.111.133               camo.githubusercontent.com
+185.199.111.133               desktop.githubusercontent.com
+185.199.111.133               favicons.githubusercontent.com
+185.199.111.133               media.githubusercontent.com
+185.199.111.133               objects.githubusercontent.com
+185.199.111.133               cloud.githubusercontent.com
 20.205.243.165                codeload.github.com
-159.106.121.75                gist.github.com
-185.199.111.133               gist.githubusercontent.com
-151.101.77.194                github.global.ssl.fastly.net
-185.199.108.133               github.map.fastly.net
-16.15.253.98                  github-cloud.s3.amazonaws.com
-52.216.200.43                 github-com.s3.amazonaws.com
-52.216.34.169                 github-production-release-asset-2e65be.s3.amazonaws.com
-16.182.103.217                github-production-repository-file-5c1aeb.s3.amazonaws.com
-16.15.254.85                  github-production-user-asset-6210df.s3.amazonaws.com
+140.82.112.3                  gist.github.com
+185.199.109.133               gist.githubusercontent.com
+184.72.1.148                  github.global.ssl.fastly.net
+185.199.111.133               github.map.fastly.net
+52.216.49.201                 github-cloud.s3.amazonaws.com
+54.231.197.129                github-com.s3.amazonaws.com
+16.15.183.196                 github-production-release-asset-2e65be.s3.amazonaws.com
+16.15.228.66                  github-production-repository-file-5c1aeb.s3.amazonaws.com
+16.15.229.146                 github-production-user-asset-6210df.s3.amazonaws.com
 13.107.42.16                  pipelines.actions.githubusercontent.com
 140.82.113.22                 central.github.com
 140.82.113.22                 collector.github.com
-140.82.114.26                 live.github.com
-140.82.113.21                 education.github.com
+140.82.113.26                 live.github.com
+140.82.112.22                 education.github.com
 150.171.110.102               vscode.dev
-185.199.108.133               private-user-images.githubusercontent.com
+185.199.111.133               private-user-images.githubusercontent.com
 
 
-# Update time: 2026-09-12T19:47:19+08:00
+# Update time: 2026-09-13T20:55:48+08:00
 # Platform: github
 # GitHub520 Host End
 
 # Steam520 Host Start
-104.119.186.131               store.steampowered.com
-23.200.224.216                steamcommunity.com
-104.119.189.201               api.steampowered.com
-23.43.220.153                 help.steampowered.com
-23.50.36.90                   steampowered.com
-23.205.89.188                 login.steampowered.com
+23.220.110.124                store.steampowered.com
+23.220.108.234                steamcommunity.com
+23.193.200.118                api.steampowered.com
+23.2.157.22                   help.steampowered.com
+23.7.23.179                   steampowered.com
+23.193.200.105                login.steampowered.com
 199.232.215.52                store.steamstatic.com
 172.234.232.226               support.steampowered.com
 199.232.215.52                cdn.steamstatic.com
 23.216.5.223                  steamcdn-a.akamaihd.net
-23.215.11.82                  store.akamai.steamstatic.com
-23.215.11.39                  cdn.akamai.steamstatic.com
-23.215.11.68                  community.akamai.steamstatic.com
-23.215.11.78                  media.steampowered.com
-162.254.193.34                cs.steampowered.com
-23.215.11.22                  cdn.cloudflare.steamstatic.com
+23.193.200.216                store.akamai.steamstatic.com
+23.193.200.208                cdn.akamai.steamstatic.com
+23.193.200.213                community.akamai.steamstatic.com
+23.193.200.208                media.steampowered.com
+162.254.193.10                cs.steampowered.com
+23.38.109.37                  cdn.cloudflare.steamstatic.com
 199.232.215.52                cdn.fastly.steamstatic.com
-23.200.224.216                steam-chat.com
-23.200.224.216                steam.tv
-23.215.11.75                  steamcommunity-a.akamaihd.net
-23.215.11.21                  steamuserimages-a.akamaihd.net
-23.1.254.215                  steammobile.akamaized.net
-23.50.36.90                   steamgames.com
-23.50.36.90                   s.team
+23.220.108.234                steam-chat.com
+23.220.108.234                steam.tv
+23.193.200.213                steamcommunity-a.akamaihd.net
+23.193.200.200                steamuserimages-a.akamaihd.net
+23.212.6.48                   steammobile.akamaized.net
+184.27.149.74                 steamgames.com
+23.7.23.179                   s.team
 43.159.95.47                  steamchina.com
 
 
-# Update time: 2026-09-12T19:47:19+08:00
+# Update time: 2026-09-13T20:55:48+08:00
 # Platform: steam
 # Steam520 Host End
 
 
 
-# Update time: 2026-09-12T19:47:19+08:00
+# Update time: 2026-09-13T20:55:48+08:00
 # Update url: https://raw.githubusercontent.com/haowee/Host520/main/hosts
 # Star me: https://github.com/haowee/Host520
 # Host520 Host End
