@@ -1,31 +1,31 @@
 # Steam520 Host Start
-23.48.10.112                  store.steampowered.com
-23.48.8.218                   steamcommunity.com
-23.212.248.219                api.steampowered.com
+23.219.6.110                  store.steampowered.com
+23.219.4.244                  steamcommunity.com
+23.53.35.140                  api.steampowered.com
 104.86.82.62                  help.steampowered.com
 23.213.69.74                  steampowered.com
-23.212.248.208                login.steampowered.com
-199.232.215.52                store.steamstatic.com
+23.53.35.140                  login.steampowered.com
+199.232.211.52                store.steamstatic.com
 172.234.232.226               support.steampowered.com
-199.232.215.52                cdn.steamstatic.com
-23.215.0.134                  steamcdn-a.akamaihd.net
-23.53.11.246                  store.akamai.steamstatic.com
-23.199.55.22                  cdn.akamai.steamstatic.com
+199.232.211.52                cdn.steamstatic.com
+23.215.0.137                  steamcdn-a.akamaihd.net
+23.199.55.54                  store.akamai.steamstatic.com
+23.12.145.24                  cdn.akamai.steamstatic.com
 23.199.55.38                  community.akamai.steamstatic.com
-23.199.55.22                  media.steampowered.com
+23.199.55.44                  media.steampowered.com
 162.254.192.20                cs.steampowered.com
-23.12.145.36                  cdn.cloudflare.steamstatic.com
-199.232.215.52                cdn.fastly.steamstatic.com
-23.48.8.218                   steam-chat.com
-23.48.8.218                   steam.tv
-23.199.55.33                  steamcommunity-a.akamaihd.net
-23.199.55.14                  steamuserimages-a.akamaihd.net
-23.205.106.158                steammobile.akamaized.net
-2.23.136.4                    steamgames.com
+23.53.11.235                  cdn.cloudflare.steamstatic.com
+199.232.211.52                cdn.fastly.steamstatic.com
+23.219.4.244                  steam-chat.com
+23.219.4.244                  steam.tv
+23.12.145.35                  steamcommunity-a.akamaihd.net
+23.12.145.4                   steamuserimages-a.akamaihd.net
+23.215.0.4                    steammobile.akamaized.net
+23.213.69.74                  steamgames.com
 23.213.69.74                  s.team
 43.169.35.212                 steamchina.com
 
 
-# Update time: 2026-09-18T20:28:03+08:00
+# Update time: 2026-09-19T20:08:52+08:00
 # Platform: steam
 # Steam520 Host End
