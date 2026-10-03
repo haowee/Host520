@@ -1,66 +1,70 @@
 [
   [
-    "173.223.2.56",
+    "23.48.10.112",
     "store.steampowered.com"
   ],
   [
-    "173.223.0.227",
+    "23.48.8.218",
     "steamcommunity.com"
   ],
   [
-    "23.215.9.137",
+    "23.212.248.19",
     "api.steampowered.com"
   ],
   [
-    "72.247.207.70",
+    "104.86.82.62",
     "help.steampowered.com"
   ],
   [
-    "104.94.66.6",
+    "23.213.69.74",
     "steampowered.com"
   ],
   [
-    "23.215.9.137",
+    "23.212.248.26",
     "login.steampowered.com"
   ],
   [
-    "199.232.215.52",
+    "199.232.211.52",
     "store.steamstatic.com"
+  ],
+  [
+    "162.125.6.1",
+    "clientconfig.steamcommunity.com"
   ],
   [
     "172.234.232.226",
     "support.steampowered.com"
   ],
   [
-    "199.232.215.52",
+    "199.232.211.52",
     "cdn.steamstatic.com"
   ],
   [
-    "23.32.45.75",
+    "23.215.0.133",
     "steamcdn-a.akamaihd.net"
   ],
   [
-    "23.46.23.62",
+    "173.223.163.213",
     "store.akamai.steamstatic.com"
   ],
   [
-    "23.46.23.10",
+    "173.223.163.208",
     "cdn.akamai.steamstatic.com"
   ],
   [
-    "23.46.23.34",
+    "173.223.163.205",
     "community.akamai.steamstatic.com"
   ],
   [
-    "23.46.23.10",
+    "173.223.163.208",
     "media.steampowered.com"
   ],
   [
-    "162.254.193.10",
+    "162.254.192.2",
     "cs.steampowered.com"
   ],
   [
-    "23.48.4.16",
+    "23.54.127.4",
     "cdn.cloudflare.steamstatic.com"
   ],
   [
@@ -68,31 +72,31 @@
     "cdn.fastly.steamstatic.com"
   ],
   [
-    "173.223.0.227",
+    "23.48.8.218",
     "steam-chat.com"
   ],
   [
-    "173.223.0.227",
+    "23.48.8.218",
     "steam.tv"
   ],
   [
-    "23.46.23.34",
+    "23.199.55.27",
     "steamcommunity-a.akamaihd.net"
   ],
   [
-    "23.46.23.74",
+    "173.223.163.214",
     "steamuserimages-a.akamaihd.net"
   ],
   [
-    "23.32.45.29",
+    "23.215.0.12",
     "steammobile.akamaized.net"
   ],
   [
-    "104.94.66.6",
+    "23.213.69.74",
     "steamgames.com"
   ],
   [
-    "104.94.66.6",
+    "23.213.69.74",
     "s.team"
   ],
   [
