@@ -1,31 +1,35 @@
 [
   [
-    "184.29.36.172",
+    "23.37.18.120",
     "store.steampowered.com"
   ],
   [
-    "184.29.30.218",
+    "23.45.136.230",
     "steamcommunity.com"
   ],
   [
-    "2.21.9.232",
+    "23.212.62.217",
     "api.steampowered.com"
   ],
   [
-    "2.17.95.215",
+    "95.101.163.109",
     "help.steampowered.com"
   ],
   [
-    "23.2.95.19",
+    "104.103.127.20",
     "steampowered.com"
   ],
   [
-    "2.21.9.242",
+    "23.212.62.210",
     "login.steampowered.com"
   ],
   [
     "199.232.211.52",
     "store.steamstatic.com"
+  ],
+  [
+    "107.181.166.244",
+    "clientconfig.steamcommunity.com"
   ],
   [
     "172.234.232.226",
@@ -36,27 +40,27 @@
     "cdn.steamstatic.com"
   ],
   [
-    "23.54.76.41",
+    "23.219.78.70",
     "steamcdn-a.akamaihd.net"
   ],
   [
-    "23.195.81.75",
+    "23.219.78.45",
     "store.akamai.steamstatic.com"
   ],
   [
-    "23.195.81.97",
+    "23.219.78.48",
     "cdn.akamai.steamstatic.com"
   ],
   [
-    "23.195.81.73",
+    "23.219.78.43",
     "community.akamai.steamstatic.com"
   ],
   [
-    "23.195.81.97",
+    "23.219.78.48",
     "media.steampowered.com"
   ],
   [
-    "162.254.194.20",
+    "162.254.192.20",
     "cs.steampowered.com"
   ],
   [
@@ -64,47 +68,47 @@
     "client-download.steampowered.com"
   ],
   [
-    "23.195.81.25",
+    "23.44.175.44",
     "cdn.cloudflare.steamstatic.com"
   ],
   [
-    "199.232.215.52",
+    "199.232.211.52",
     "cdn.fastly.steamstatic.com"
   ],
   [
-    "184.29.30.218",
+    "23.45.136.230",
     "steam-chat.com"
   ],
   [
-    "184.29.30.218",
+    "23.45.136.230",
     "steam.tv"
   ],
   [
-    "23.195.81.73",
+    "23.219.78.43",
     "steamcommunity-a.akamaihd.net"
   ],
   [
-    "23.195.81.73",
+    "23.219.78.42",
     "steamuserimages-a.akamaihd.net"
   ],
   [
-    "23.1.254.215",
+    "23.53.122.142",
     "steammobile.akamaized.net"
   ],
   [
-    "23.2.95.19",
+    "104.103.127.20",
     "steamgames.com"
   ],
   [
-    "23.2.95.19",
+    "104.103.127.20",
     "s.team"
   ],
   [
-    "43.169.35.212",
+    "43.169.32.212",
     "steamchina.com"
   ],
   [
-    "20.247.166.64",
+    "57.155.223.240",
     "github.com"
   ],
   [
@@ -112,7 +116,7 @@
     "api.github.com"
   ],
   [
-    "185.199.111.153",
+    "185.199.109.153",
     "github.io"
   ],
   [
@@ -120,15 +124,15 @@
     "github.blog"
   ],
   [
-    "140.82.113.17",
+    "140.82.112.18",
     "github.community"
   ],
   [
-    "185.199.111.153",
+    "185.199.109.153",
     "githubstatus.com"
   ],
   [
-    "185.199.109.215",
+    "185.199.111.215",
     "github.githubassets.com"
   ],
   [
@@ -192,7 +196,7 @@
     "cloud.githubusercontent.com"
   ],
   [
-    "20.205.243.165",
+    "20.6.7.16",
     "codeload.github.com"
   ],
   [
@@ -204,7 +208,7 @@
     "gist.githubusercontent.com"
   ],
   [
-    "140.248.129.194",
+    "104.244.43.248",
     "github.global.ssl.fastly.net"
   ],
   [
@@ -212,23 +216,23 @@
     "github.map.fastly.net"
   ],
   [
-    "16.15.163.15",
+    "52.216.48.10",
     "github-cloud.s3.amazonaws.com"
   ],
   [
-    "16.15.160.44",
+    "54.231.132.82",
     "github-com.s3.amazonaws.com"
   ],
   [
-    "16.15.171.13",
+    "54.231.194.98",
     "github-production-release-asset-2e65be.s3.amazonaws.com"
   ],
   [
-    "16.15.207.52",
+    "52.217.137.210",
     "github-production-repository-file-5c1aeb.s3.amazonaws.com"
   ],
   [
-    "16.15.212.38",
+    "52.217.135.2",
     "github-production-user-asset-6210df.s3.amazonaws.com"
   ],
   [
@@ -240,19 +244,19 @@
     "central.github.com"
   ],
   [
-    "140.82.113.22",
+    "140.82.112.21",
     "collector.github.com"
   ],
   [
-    "140.82.113.25",
+    "140.82.112.26",
     "live.github.com"
   ],
   [
-    "140.82.113.22",
+    "140.82.114.21",
     "education.github.com"
   ],
   [
-    "150.171.110.103",
+    "150.171.110.98",
     "vscode.dev"
   ],
   [
